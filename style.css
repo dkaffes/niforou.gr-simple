@@ -1,0 +1,211 @@
+/**************************/
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**************************/
+/* Custom properties (variables) for colors, font-weights */
+
+:root {
+  --clr-bg: hsl(257, 40%, 49%);
+  --clr-bg-tint: hsl(257, 35%, 65%);
+  --clr-bg-shade: hsl(257, 61%, 43%);
+  --clr-text: hsl(0, 0%, 100%);
+  --clr-link: hsl(29, 87%, 48%);
+  --clr-link-h: hsl(4, 96%, 51%);
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+}
+
+/* Google Fonts */
+/**************************/
+/* Inter: CSS class for a variable style
+<uniquifier>: Use a unique and descriptive class name
+.inter-<uniquifier> */
+
+.inter-niforou {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--fw-regular);
+  font-style: normal;
+}
+
+/**************************/
+/* General styling */
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-size: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/**************************/
+/* Main section */
+
+.main {
+  max-width: 40rem; /* 640px */
+  background-color: var(--clr-bg-tint);
+  border-radius: 10px;
+}
+
+.hero {
+  padding: 1.5rem;
+}
+
+.hero-profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.profile-box-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-heading {
+  font-weight: var(--fw-bold);
+  font-size: 2.4rem;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+}
+
+.hero-subheading {
+  display: block;
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+.hero-description-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.hero-btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 60%;
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  padding: 0.8rem 1.6rem;
+  border-radius: 80px;
+  box-shadow: 0 10px 15px 0 rgb(0, 0, 0, 0.2);
+  transition: all 200ms;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: var(--clr-bg-shade);
+    color: var(--clr-text);
+  }
+}
+
+/**************************/
+/* Footer section*/
+
+.footer-contact-box {
+  background-color: var(--clr-bg-tint);
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.contact-box-title {
+  font-weight: var(--fw-bold);
+  font-size: 1.6rem;
+  letter-spacing: 0.75px;
+  margin-bottom: 1.6rem;
+  text-align: center;
+}
+
+.footer-contacts {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.2rem;
+  margin-bottom: 1.6rem;
+}
+
+.footer-subheading,
+.footer-link {
+  display: block;
+  font-weight: var(--fw-regular);
+  font-size: 1rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  color: var(--clr-bg);
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: var(--clr-bg-shade);
+}
+
+/**************************/
+/* MEDIA QUERIES */
+/* changing the layout to flex-row at 800px and 960px */
+/**************************/
+@media (width >= 50rem) {
+  .footer-contacts {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+@media (width >= 60rem) {
+  .main {
+    max-width: 90rem; /* 1440px */
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 2rem;
+    /* padding-right: 2rem; */
+  }
+
+  .hero-btn {
+    width: 50%;
+  }
+
+  .profile-box-text {
+    align-items: flex-start;
+  }
+}
