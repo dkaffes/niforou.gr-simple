@@ -194,19 +194,21 @@ img {
   font-weight: var(--fw-regular);
   font-size: 1rem;
   margin-top: 0.2rem;
+  padding-inline: 0.4rem;
   transition: all 200ms;
 }
 
 .footer-link:link,
 .footer-link:visited {
-  /* text-decoration: none; */
+  text-decoration: none;
   color: var(--clr-text);
   font-weight: var(--fw-semi-bold);
 }
 
 .footer-link:hover,
 .footer-link:active {
-  color: var(--clr-link-tint);
+  background: var(--clr-link);
+  border-radius: 8px;
 }
 
 .social-icon {
