@@ -18,21 +18,37 @@
   --clr-link: #bb5b27;
   --clr-link-tint: #bb6a3e;
   --fw-regular: 400;
-  --fw-semi-bold: 600;
   --fw-bold: 700;
+  --fs-sm: 1rem;
+  --fs-md: 1.4rem;
+  --fs-lg: 2rem;
+  --sp-xsm: 0.5rem;
+  --sp-sm: 1rem;
+  --sp-md: 1.6rem;
+  --sp-lg: 2rem;
 }
 
-/* Google Fonts */
 /**************************/
-/* Inter: CSS class for a variable style
-<uniquifier>: Use a unique and descriptive class name
-.inter-<uniquifier> */
+/* Local Fonts */
+/* google-webfonts-helper */
+/* A Hassle-Free Way to Self-Host Google Fonts */
+/* https://gwfh.mranftl.com/fonts */
 
-.inter-niforou {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: var(--fw-regular);
+/* inter-regular - greek_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
   font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/inter-v18-greek_latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-700 - greek_latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/inter-v18-greek_latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /**************************/
@@ -43,17 +59,19 @@ body {
   line-height: 1.5;
   background-color: var(--clr-bg);
   color: var(--clr-text);
-  font-size: 1rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: var(--fs-sm);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: var(--sp-lg);
 }
 
 img {
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 /**************************/
@@ -76,34 +94,34 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.6rem;
+  gap: var(--sp-md);
   padding: 1.5rem;
   background-color: var(--clr-bg-shade);
   border-radius: 10px;
 }
 
 .hero-profile-box {
-  margin-bottom: 1.6rem;
+  margin-bottom: var(--sp-md);
 }
 
 .profile-box-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--sp-xsm);
 }
 
 .hero-heading {
   font-weight: var(--fw-bold);
-  font-size: 2rem;
+  font-size: var(--fs-lg);
   letter-spacing: -0.5px;
   line-height: 1.05;
 }
 
 .hero-subheading {
   display: block;
-  font-weight: var(--fw-semi-bold);
-  font-size: 1.4rem;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
   letter-spacing: 0.75px;
 }
 
@@ -117,7 +135,7 @@ img {
   background-image: linear-gradient(to right, #bb5b27, #bb6a3e);
   color: var(--clr-text);
   padding: 0.8rem 1.6rem;
-  border-radius: 80px;
+  border-radius: 25px;
   box-shadow: 0 10px 15px 0 rgb(95, 134, 127, 0.2);
   transition: all 200ms;
 
@@ -147,7 +165,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: var(--sp-lg);
 }
 
 .footer-contact-box {
@@ -158,9 +176,9 @@ img {
 
 .contact-box-title {
   font-weight: var(--fw-bold);
-  font-size: 1.6rem;
+  font-size: var(--fs-md);
   letter-spacing: 0.75px;
-  margin-bottom: 1.6rem;
+  margin-bottom: var(--sp-md);
   text-align: center;
 }
 
@@ -168,13 +186,13 @@ img {
   font-style: normal;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: var(--sp-md);
 }
 
 .contacts-box {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--sp-sm);
 }
 
 .contacts-icon {
@@ -185,15 +203,15 @@ img {
 
 .footer-heading {
   font-weight: var(--fw-bold);
-  font-size: 1.2rem;
+  font-size: var(--fs-sm);
 }
 
 .footer-subheading,
 .footer-link {
   display: block;
   font-weight: var(--fw-regular);
-  font-size: 1rem;
-  margin-top: 0.2rem;
+  font-size: var(--fs-sm);
+  margin-top: var(--sp-xsm);
   padding-inline: 0.4rem;
   transition: all 200ms;
 }
@@ -202,7 +220,7 @@ img {
 .footer-link:visited {
   text-decoration: none;
   color: var(--clr-text);
-  font-weight: var(--fw-semi-bold);
+  font-weight: var(--fw-bold);
 }
 
 .footer-link:hover,
@@ -226,16 +244,21 @@ img {
 
 /**************************/
 /* MEDIA QUERIES */
-/* changing the layout to flex-row at 800px and 960px */
+/* changing the layout to flex-row at 704px and 960px */
 /**************************/
-@media (width >= 50rem) {
+@media (width >= 44rem) {
+  :root {
+    --fs-lg: 2.5rem;
+    --fs-md: 1.6rem;
+  }
+
   .logo {
     width: 7rem;
   }
 
   .footer-contacts {
     flex-direction: row;
-    gap: 2rem;
+    gap: var(--sp-lg);
   }
 
   .hero-btn {
@@ -254,7 +277,7 @@ img {
 
   .hero {
     display: flex;
-    gap: 1.6rem;
+    gap: var(--sp-md);
   }
 
   .hero-profile-box {
