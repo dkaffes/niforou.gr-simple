@@ -19,6 +19,7 @@
   --clr-link-tint: #bb6a3e;
   --fw-regular: 400;
   --fw-bold: 700;
+  --fs-xsm: 0.75rem;
   --fs-sm: 1rem;
   --fs-md: 1.4rem;
   --fs-lg: 2rem;
@@ -125,6 +126,19 @@ img {
   letter-spacing: 0.75px;
 }
 
+.hero-social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--clr-text);
+  transition: all 200ms;
+
+  &:focus,
+  &:hover,
+  &:active {
+    color: var(--clr-link);
+  }
+}
+
 .hero-btn {
   cursor: pointer;
   display: inline-block;
@@ -206,13 +220,11 @@ img {
   font-size: var(--fs-sm);
 }
 
-.footer-subheading,
-.footer-link {
-  display: block;
+.footer-subheading {
   font-weight: var(--fw-regular);
   font-size: var(--fs-sm);
   margin-top: var(--sp-xsm);
-  padding-inline: 0.4rem;
+  /* padding-inline: 0.4rem; fix this!!! */
   transition: all 200ms;
 }
 
@@ -229,22 +241,13 @@ img {
   border-radius: 8px;
 }
 
-.social-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  color: var(--clr-text);
-  transition: all 200ms;
-
-  &:focus,
-  &:hover,
-  &:active {
-    color: var(--clr-link);
-  }
+.tool-box-privacy {
+  font-size: var(--fs-xsm);
 }
 
 /**************************/
 /* MEDIA QUERIES */
-/* changing the layout to flex-row at 704px and 960px */
+/* changing the layout to flex-row at 704px and 984px */
 /**************************/
 @media (width >= 44rem) {
   :root {
@@ -256,17 +259,21 @@ img {
     width: 7rem;
   }
 
+  .hero-btn {
+    width: 70%;
+  }
+
   .footer-contacts {
     flex-direction: row;
     gap: var(--sp-lg);
   }
 
-  .hero-btn {
-    width: 70%;
+  .contacts-box {
+    align-items: flex-start;
   }
 }
 
-@media (width >= 60rem) {
+@media (width >= 61.5rem) {
   .logo {
     width: 8rem;
   }
@@ -291,5 +298,9 @@ img {
 
   .hero-btn {
     width: 60%;
+  }
+
+  .contacts-box {
+    align-items: center;
   }
 }
