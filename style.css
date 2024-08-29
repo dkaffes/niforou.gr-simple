@@ -233,12 +233,12 @@ img {
   text-decoration: none;
   color: var(--clr-text);
   font-weight: var(--fw-bold);
+  transition: all 0.3s;
 }
 
 .footer-link:hover,
 .footer-link:active {
-  background: var(--clr-link);
-  border-radius: 8px;
+  color: var(--clr-link);
 }
 
 .tool-box-privacy {
