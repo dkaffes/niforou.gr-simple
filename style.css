@@ -182,7 +182,6 @@ img {
   font-size: var(--fs-md);
   letter-spacing: 0.75px;
   margin-bottom: var(--sp-md);
-  text-align: center;
 }
 
 .footer-contacts {
