@@ -13,7 +13,8 @@
 :root {
   --clr-bg: #3f625b;
   --clr-bg-tint: #5f867f;
-  --clr-bg-shade: #2c4641;
+  /* --clr-bg-shade: #2c4641; */
+  --clr-bg-shade: hsla(168, 23%, 22%, 0.85);
   --clr-text: #ffffff;
   --clr-link: #bb5b27;
   --clr-link-tint: #bb6a3e;
@@ -61,6 +62,10 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   background-color: var(--clr-bg);
+  background-repeat: no-repeat;
+  background-image: url(/images/tree-bg.svg);
+  background-position: left 135% bottom 2%;
+  background-size: 80% auto;
   color: var(--clr-text);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: var(--fs-sm);
@@ -72,6 +77,12 @@ img {
   max-width: 100%;
   display: block;
   height: auto;
+}
+
+p,
+li {
+  max-width: 100ch;
+  text-wrap: pretty;
 }
 
 /* ======================= */
@@ -94,6 +105,7 @@ img {
 .heading-2 {
   font-weight: var(--fw-bold);
   letter-spacing: -0.5px;
+  text-wrap: balance;
 }
 
 .heading-1 {
@@ -126,8 +138,8 @@ img {
   color: var(--clr-text);
   font-weight: var(--fw-bold);
   border-bottom: 2px solid var(--clr-link);
-  padding-bottom: 2px;
-  transition: all 0.2s;
+  padding-bottom: 1px;
+  transition: all 0.25s;
 }
 
 .link:hover,
@@ -311,6 +323,11 @@ img {
     --fs-md: 1.6rem;
   }
 
+  body {
+    background-position: right -15% bottom 5%;
+    background-size: 60% auto;
+  }
+
   .logo {
     /* width: 7rem; */
     height: 7rem;
@@ -336,6 +353,10 @@ img {
   /* ======================= */
   /* Sitewide styling */
   /* ======================= */
+  body {
+    background-size: 40% auto;
+  }
+
   .main {
     max-width: 90rem; /* 1440px */
   }
