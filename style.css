@@ -43,7 +43,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/inter-v18-greek_latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("fonts/inter-v18-greek_latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* inter-700 - greek_latin */
 @font-face {
@@ -51,7 +51,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/inter-v18-greek_latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("fonts/inter-v18-greek_latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 /* ======================= */
@@ -63,7 +63,7 @@ body {
   line-height: 1.5;
   background-color: var(--clr-bg);
   background-repeat: no-repeat;
-  background-image: url(/images/tree-bg.svg);
+  background-image: url("/images/tree-bg.svg");
   background-position: left 135% bottom 2%;
   background-size: 80% auto;
   color: var(--clr-text);
