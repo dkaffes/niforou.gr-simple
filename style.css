@@ -69,7 +69,7 @@ body {
   color: var(--clr-text);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: var(--fs-sm);
-  padding: 1.5rem;
+  padding: var(--sp-md);
   gap: var(--sp-lg);
 }
 
@@ -82,7 +82,7 @@ img {
 p,
 li {
   max-width: 100ch;
-  text-wrap: pretty;
+  /* text-wrap: pretty; */
 }
 
 /* ======================= */
@@ -90,7 +90,7 @@ li {
 /* ======================= */
 
 .container {
-  padding: 1.5rem;
+  padding: var(--sp-md);
   background-color: var(--clr-bg-shade);
   border-radius: 10px;
 }
@@ -122,14 +122,11 @@ li {
 }
 
 .list {
-  list-style: square;
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-xsm);
+  list-style-position: inside;
 }
 
 .list-item {
-  margin-inline-start: var(--sp-lg);
+  padding-inline: var(--sp-sm);
 }
 
 .link:link,
@@ -142,17 +139,19 @@ li {
   transition: all 0.25s;
 }
 
-.link:hover,
-.link:active {
-  color: var(--clr-link);
-  border-bottom: 2px solid transparent;
-}
-
-*:focus {
+.link:focus {
   outline: none;
   /* outline: 4px dotted #e67e22; */
   /* outline-offset: 2px; */
   box-shadow: 0 0 0 0.2rem var(--clr-link-tint);
+  border-bottom: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.link:hover,
+.link:active {
+  color: var(--clr-link);
+  border-bottom: 2px solid transparent;
 }
 
 /* ======================= */
@@ -167,21 +166,22 @@ li {
   text-align: center;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 /* ======================= */
 /* Sitewide styling */
 /* ======================= */
 
 /* Main */
-
 .main {
   max-width: 40rem; /* 640px */
 }
 
 /* Header */
-
 .logo {
   height: 6rem;
-  /* width: 6rem; */
 }
 
 /* Footer */
@@ -258,13 +258,18 @@ li {
   line-height: 1.2;
 }
 
+.hero-social:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem var(--clr-link-tint);
+  border-radius: 4px;
+}
+
 .hero-social-icon {
   width: 2.5rem;
   height: 2.5rem;
   color: var(--clr-text);
   transition: all 200ms;
 
-  &:focus,
   &:hover,
   &:active {
     color: var(--clr-link);
@@ -285,11 +290,15 @@ li {
   box-shadow: 0 10px 15px 0 rgb(95, 134, 127, 0.2);
   transition: all 200ms;
 
-  &:focus,
   &:hover,
   &:active {
     background-image: linear-gradient(to right, #bb6a3e, #bb5b27);
   }
+}
+
+.hero-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem var(--clr-bg-tint);
 }
 
 .btn-box {
@@ -329,7 +338,6 @@ li {
   }
 
   .logo {
-    /* width: 7rem; */
     height: 7rem;
   }
 
@@ -347,6 +355,13 @@ li {
   .hero-btn {
     width: 70%;
   }
+
+  /* ======================= */
+  /* Privacy Policy page */
+  /* ======================= */
+  .container-privacy {
+    text-align: justify;
+  }
 }
 
 @media (width >= 61.5rem) {
@@ -362,7 +377,6 @@ li {
   }
 
   .logo {
-    /* width: 8rem; */
     height: 8rem;
   }
 
@@ -389,4 +403,8 @@ li {
   .hero-btn {
     width: 60%;
   }
+
+  /* ======================= */
+  /* Privacy Policy page */
+  /* ======================= */
 }
